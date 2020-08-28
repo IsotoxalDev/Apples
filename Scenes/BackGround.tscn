@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Background/rect1047.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Background/g1045.png" type="Texture" id=2]
+
+[node name="BackGround" type="CanvasLayer"]
+layer = -5
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 72, 111 )
+scale = Vector2( 0.045, 0.045 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 226 )
+scale = Vector2( 1, 1.2 )
+texture = ExtResource( 1 )
+centered = false

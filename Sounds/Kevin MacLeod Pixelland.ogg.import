@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Kevin MacLeod Pixelland.ogg-18c75fe6e02a239a6089b26717158b07.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Kevin MacLeod Pixelland.ogg"
+dest_files=[ "res://.import/Kevin MacLeod Pixelland.ogg-18c75fe6e02a239a6089b26717158b07.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Heart/newHeart.png" type="Texture" id=1]
+
+[node name="Life" type="Node2D"]
+
+[node name="three" type="Sprite" parent="."]
+position = Vector2( 20, 10 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 1 )
+offset = Vector2( 5, 0 )
+
+[node name="two" type="Sprite" parent="."]
+position = Vector2( 20, 30 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 1 )
+offset = Vector2( 5, 0 )
+
+[node name="one" type="Sprite" parent="."]
+position = Vector2( 20, 50 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 1 )
+offset = Vector2( 5, 0 )

@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Apples/Apples.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Sprites.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Apples/Decrease.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Apples/Increase.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Melon/g3369.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Mangoes/Mangoes.png" type="Texture" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 10.6939
+height = 12.0679
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 17.3357
+
+[node name="Sprites" type="RigidBody2D"]
+pause_mode = 2
+position = Vector2( 0, 1 )
+input_pickable = true
+gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
+applied_force = Vector2( 0, 50 )
+script = ExtResource( 2 )
+
+[node name="Apple" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -5 )
+shape = SubResource( 1 )
+
+[node name="Apple" type="Sprite" parent="Apple"]
+position = Vector2( 0, 5 )
+scale = Vector2( 0.045, 0.045 )
+texture = ExtResource( 1 )
+offset = Vector2( 20, 20 )
+hframes = 3
+
+[node name="Bomb" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -5 )
+shape = SubResource( 1 )
+
+[node name="Bomb" parent="Bomb" instance=ExtResource( 3 )]
+position = Vector2( 0, 7 )
+
+[node name="Brake" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -5 )
+shape = SubResource( 1 )
+
+[node name="Brake" type="Sprite" parent="Brake"]
+position = Vector2( 0, 5 )
+scale = Vector2( 0.045, 0.045 )
+texture = ExtResource( 4 )
+offset = Vector2( 20, 20 )
+
+[node name="Increaser" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -5 )
+shape = SubResource( 1 )
+
+[node name="Increaser" type="Sprite" parent="Increaser"]
+position = Vector2( 0, 5 )
+scale = Vector2( 0.045, 0.045 )
+texture = ExtResource( 5 )
+offset = Vector2( 20, 20 )
+
+[node name="Mangoes" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -5 )
+shape = SubResource( 1 )
+
+[node name="Mangoes" type="Sprite" parent="Mangoes"]
+position = Vector2( 0, 5 )
+scale = Vector2( 0.045, 0.045 )
+texture = ExtResource( 7 )
+offset = Vector2( 20, 20 )
+
+[node name="Melon" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -5 )
+shape = SubResource( 2 )
+
+[node name="Melon" type="Sprite" parent="Melon"]
+position = Vector2( 0, 5 )
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 6 )
+
+[node name="ShrinkTween" type="Tween" parent="."]
+
+[node name="JiggleTween" type="Tween" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_Sprites_body_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_Sprites_mouse_entered"]
+[connection signal="tween_completed" from="ShrinkTween" to="." method="_on_ShrinkTween_tween_completed"]
+[connection signal="tween_completed" from="JiggleTween" to="." method="jiggleBack"]
