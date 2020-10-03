@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Main Menu.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/ScreenShake.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Background/BG.png" type="Texture" id=4]
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.264692, 0.261505 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Apple Container" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 72, 128 )
+
+[node name="ScreenShake" parent="Camera2D" instance=ExtResource( 3 )]
+
+[node name="Ground" parent="." instance=ExtResource( 1 )]
+
+[editable path="Ground"]

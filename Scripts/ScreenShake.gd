@@ -28,6 +28,6 @@ func new_shake():
 
 
 
-func _on_ShakeTween_tween_completed(object, key):
+func _on_ShakeTween_tween_completed(_object, _key):
 	active = false
 	new_shake()

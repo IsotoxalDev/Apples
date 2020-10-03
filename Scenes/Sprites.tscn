@@ -19,6 +19,8 @@ radius = 17.3357
 pause_mode = 2
 position = Vector2( 0, 1 )
 input_pickable = true
+collision_layer = 2
+collision_mask = 12
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
@@ -26,7 +28,6 @@ applied_force = Vector2( 0, 50 )
 script = ExtResource( 2 )
 
 [node name="Apple" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 

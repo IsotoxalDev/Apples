@@ -1,35 +1,28 @@
 extends Node2D
 
-var currlife = 3
-var score = 0
-var coins = 0
-export var nextspawn = 50
-var time = 0
-var a = 1
-var first = true
-var stop = false
-var gravity = 0.1
-var SpawnLabel = [1, 2, 3]
-var probablities = [70, 25, 5]
-var spawnrate = 0
-var maxpercent = 0
-var temp = 0
-var Spawntime = 0
-var SpritesScn = preload("res://Scenes/Sprites.tscn")
-export var speed = 100
-onready var basket = $Basket
-onready var basketcol = $basketcol2
-onready var container = $SpriteContainer
-onready var scorelabel = $UI/Score
-onready var coinslabel = $UI/Coins
-onready var l1 = $UI/Life/one
-onready var l2 = $UI/Life/two
-onready var l3 = $UI/Life/three
-onready var revive_screen = $Revive/Control
+var currlife : int = 3
+var score : int = 0
+var coins :int = 0
+export var nextspawn : int = 50
+var time : int = 0
+var a : int = 1
+var first : bool = true
+var stop : bool = false
+var gravity : float = 0.1
+var maxpercent : int = 0
+var temp : int = 0
+var Spawntime : int = 0
+var SpritesScn : PackedScene = preload("res://Scenes/Sprites.tscn")
+onready var container : CanvasLayer = $SpriteContainer
+onready var scorelabel : Label = $UI/Score
+onready var coinslabel : Label = $UI/Coins
+onready var l1 : Node2D = $UI/Life/one
+onready var l2 : Node2D = $UI/Life/two
+onready var l3 : Node2D = $UI/Life/three
+onready var revive_screen : Control = $Revive/Control
 
-#func _ready():
-	#if global.data['music']:
-	#	bg.play()
+func _ready():
+	$Ground.game = true
 
 func _process(_delta):
 	scorelabel.set_text(str(score))
@@ -39,15 +32,7 @@ func _process(_delta):
 		global.coins = 999999
 	if not stop:
 		if time == nextspawn:
-			for i in probablities:
-				maxpercent += i
-			spawnrate = rand_range(0, maxpercent)
-			for j in range(len(probablities)):
-				temp += probablities[j]
-				if spawnrate < temp:
-					for _i in range(SpawnLabel[j]):
-						spawn()
-					break
+			spawn()
 			time = 0
 			if score % 10 == 0:
 				
@@ -63,27 +48,14 @@ func _process(_delta):
 			if a == 1:
 				revive_screen.start()
 				for i in container.get_children():
-				#	ParticlesManager.emit(i.Sprite, i.get_position())
 					i.queue_free()
 				a += 1
 	
-
-
-func _physics_process(_delta):
-	if not stop:
-		#var pos = Vector2(get_viewport().get_mouse_position().x, 180)
-		var pos = Vector2(Input.get_accelerometer().x, 0)
-		#basket.set_position(pos)
-		#basketcol.set_position(pos)
-		basket.move_and_slide(pos * speed)
-		basketcol.set_position(pos * speed)
-	pass
 
 func spawn():
 	var newSprite = SpritesScn.instance()
 	var pos = Vector2(rand_range(12, 132), -35)
 	newSprite.set_position(pos)
-	#newSprite.set_applied_force(Vector2(newSprite.get_applied_force().x,newSprite.get_applied_force().y+gravity))
 	container.add_child(newSprite)
 	pass
 
