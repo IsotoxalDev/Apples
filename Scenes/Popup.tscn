@@ -4,13 +4,9 @@
 [ext_resource path="res://Assets/buttonicon/popup/close.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Popup.gd" type="Script" id=3]
 
-[node name="Popup" type="Popup"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Popup" type="PopupDialog"]
+popup_exclusive = true
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 463.0
@@ -25,9 +21,9 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 63.0
-margin_right = 730.0
-margin_bottom = 317.0
+margin_top = 106.0
+margin_right = 770.0
+margin_bottom = 325.0
 rect_scale = Vector2( 0.15, 0.15 )
 __meta__ = {
 "_edit_group_": true,
@@ -36,8 +32,10 @@ __meta__ = {
 
 [node name="TextureButton" type="TextureButton" parent="CloseBtn"]
 margin_left = 129.0
-margin_top = 34.0
+margin_top = 17.0
 margin_right = 641.0
-margin_bottom = 219.0
+margin_bottom = 202.0
+focus_mode = 0
+enabled_focus_mode = 0
 texture_normal = ExtResource( 2 )
 [connection signal="pressed" from="CloseBtn/TextureButton" to="." method="_on_TextureButton_pressed"]
