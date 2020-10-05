@@ -15,12 +15,12 @@
 [sub_resource type="StyleBoxFlat" id=1]
 
 [sub_resource type="DynamicFont" id=2]
-size = 15
+size = 20
 use_filter = true
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 18
+size = 15
 use_filter = true
 font_data = ExtResource( 7 )
 
@@ -106,49 +106,31 @@ __meta__ = {
 }
 
 [node name="Mangobuy" parent="Popups" instance=ExtResource( 5 )]
+visible = false
 margin_left = 15.0
-margin_top = 60.0
-margin_right = 15.0
-margin_bottom = 60.0
-
-[node name="CenterContainer" type="CenterContainer" parent="Popups/Mangobuy"]
-margin_left = 4.0
-margin_top = 21.0
-margin_right = 749.0
-margin_bottom = 926.0
-rect_scale = Vector2( 0.15, 0.15 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Buy" type="TextureButton" parent="Popups/Mangobuy/CenterContainer"]
-margin_left = 194.0
-margin_top = 360.0
-margin_right = 551.0
-margin_bottom = 545.0
-texture_normal = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_top = 45.0
+margin_right = 131.0
+margin_bottom = 186.0
 
 [node name="Label" type="Label" parent="Popups/Mangobuy"]
 margin_right = 116.0
-margin_bottom = 20.0
+margin_bottom = 24.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Mango"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label2" type="Label" parent="Popups/Mangobuy"]
-margin_left = 18.0
-margin_top = 50.0
+margin_left = 13.0
+margin_top = 60.0
 margin_right = 116.0
-margin_bottom = 75.0
+margin_bottom = 80.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "2000"
 align = 1
 valign = 1
@@ -157,67 +139,68 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Popups/Mangobuy/Label2"]
-margin_left = 10.0
+margin_left = 20.0
 margin_top = 3.0
-margin_right = 92.0
+margin_right = 102.0
 margin_bottom = 87.0
-rect_scale = Vector2( 0.2, 0.2 )
+rect_scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect2" type="TextureRect" parent="Popups/Mangobuy"]
-margin_left = 46.0
-margin_top = 18.0
-margin_right = 556.0
-margin_bottom = 639.0
-rect_scale = Vector2( 0.05, 0.05 )
-rect_pivot_offset = Vector2( 0.1, 0 )
+margin_left = 39.0
+margin_top = 21.2162
+margin_right = 549.0
+margin_bottom = 642.216
+rect_scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Melonbuy" parent="Popups" instance=ExtResource( 5 )]
-margin_left = 15.0
-margin_top = 60.0
-margin_right = 15.0
-margin_bottom = 60.0
-
-[node name="CenterContainer" type="CenterContainer" parent="Popups/Melonbuy"]
-margin_right = 776.0
-margin_bottom = 1198.0
+[node name="CenterContainer" type="CenterContainer" parent="Popups/Mangobuy"]
+margin_top = 80.0
+margin_right = 772.0
+margin_bottom = 265.0
 rect_scale = Vector2( 0.15, 0.15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Buy" type="TextureButton" parent="Popups/Melonbuy/CenterContainer"]
-margin_left = 209.0
-margin_top = 506.0
-margin_right = 566.0
-margin_bottom = 691.0
+[node name="TextureButton" type="TextureButton" parent="Popups/Mangobuy/CenterContainer"]
+margin_left = 207.0
+margin_right = 564.0
+margin_bottom = 185.0
 texture_normal = ExtResource( 6 )
+
+[node name="Melonbuy" parent="Popups" instance=ExtResource( 5 )]
+visible = false
+margin_left = 15.0
+margin_top = 45.0
+margin_right = 131.0
+margin_bottom = 186.0
+
+[node name="Label" type="Label" parent="Popups/Melonbuy"]
+margin_right = 116.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Mango"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Popups/Melonbuy"]
-margin_right = 116.0
-margin_bottom = 20.0
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Melon"
-align = 1
-valign = 1
-
 [node name="Label2" type="Label" parent="Popups/Melonbuy"]
-margin_left = 18.0
-margin_top = 50.0
+margin_left = 13.0
+margin_top = 60.0
 margin_right = 116.0
-margin_bottom = 75.0
+margin_bottom = 80.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "5000"
 align = 1
 valign = 1
@@ -226,21 +209,38 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Popups/Melonbuy/Label2"]
-margin_left = 10.0
+margin_left = 20.0
 margin_top = 3.0
-margin_right = 92.0
+margin_right = 102.0
 margin_bottom = 87.0
-rect_scale = Vector2( 0.2, 0.2 )
+rect_scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect2" type="TextureRect" parent="Popups/Melonbuy"]
-margin_left = 46.0
-margin_top = 18.0
-margin_right = 556.0
-margin_bottom = 639.0
-rect_scale = Vector2( 0.05, 0.05 )
-rect_pivot_offset = Vector2( 0.1, 0 )
+margin_left = 44.0
+margin_top = 21.216
+margin_right = 557.0
+margin_bottom = 710.216
+rect_scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CenterContainer" type="CenterContainer" parent="Popups/Melonbuy"]
+margin_top = 80.0
+margin_right = 772.0
+margin_bottom = 265.0
+rect_scale = Vector2( 0.15, 0.15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="Popups/Melonbuy/CenterContainer"]
+margin_left = 207.0
+margin_right = 564.0
+margin_bottom = 185.0
+texture_normal = ExtResource( 6 )
